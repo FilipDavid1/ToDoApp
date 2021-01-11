@@ -7,9 +7,9 @@ using System.Text;
 using System.Xml.Serialization;
 using ToDoApp.Models;
 
-namespace ToDoApp
+namespace ToDoApp.Models
 {
-    class ToDosService
+   public class ToDosService
     {
 
 
@@ -23,14 +23,7 @@ namespace ToDoApp
             ToDos = new ObservableCollection<ToDo>();
         }
 
-        public void SaveToDos()
-        {
-            XmlSerializer serializer = new XmlSerializer(ToDos.GetType());
-            using (StreamWriter sw = new StreamWriter(filePath))
-            {
-                serializer.Serialize(sw, ToDos);
-            }
-        }
+
 
         public void LoadToDos()
         {
@@ -42,12 +35,19 @@ namespace ToDoApp
                     ToDos = (ObservableCollection<ToDo>)serializer.Deserialize(sr);
                 }
             }
-
-
+        }
+        public void SaveToDos()
+        {
+            XmlSerializer serializer = new XmlSerializer(ToDos.GetType());
+            using (StreamWriter sw = new StreamWriter(filePath))
+            {
+                serializer.Serialize(sw, ToDos);
+            }
         }
 
         public void AddToDo(ToDo toDo) => ToDos.Add(toDo);
         public void RemoveToDo(ToDo toDo) => ToDos.Remove(toDo);
 
     }
+
 }

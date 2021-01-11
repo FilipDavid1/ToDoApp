@@ -5,14 +5,13 @@ using System.Text;
 
 namespace ToDoApp.Models
 {
-    class ToDo : INotifyPropertyChanged
+    public class ToDo : INotifyPropertyChanged
     {
         private string text;
 
         public string Text
         {
             get => text;
-
             set
             {
                 text = value;
@@ -24,5 +23,4 @@ namespace ToDoApp.Models
 
         public event PropertyChangedEventHandler PropertyChanged;
     }
-
 }

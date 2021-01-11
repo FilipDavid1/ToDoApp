@@ -1,30 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ToDoApp.ToDolist"
+             x:Class="ToDoApp.ToDoListPage"
              Title="List of tasks">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="+"
-                     Clicked="OnNoteAddedClicked"></ToolbarItem>
+                     Clicked="OnNoteAddedClicked" />
     </ContentPage.ToolbarItems>
-    <ListView x:Name="ListView"
+
+    <ListView x:Name="listView"
               Margin="20"
               ItemSelected="OnListViewItemSelected"
-              ItemsSource="{Binding ToDos}"
+              ItemsSource="{Binding ToDos}" 
               HasUnevenRows="True">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
                     <Grid ColumnDefinitions="*, 60">
                         <StackLayout Margin="0,0,0,5">
-                            <Label Text="{Binding Text}"
-                                   FontSize="18"></Label>
+                            <Label Text="{Binding Text}" 
+                                   FontSize="18"/>
                             <Label Text="{Binding Date}"
-                                   FontSize="12"></Label>
+                                   FontSize="12"/>
                         </StackLayout>
                         <CheckBox Grid.Column="1" IsChecked="{Binding IsDone}" CheckedChanged="CheckBoxCheckedChanged"
-                                  Color="CornflowerBlue"></CheckBox>
+                                  Color="CornflowerBlue"/>
                     </Grid>
                 </ViewCell>
             </DataTemplate>
@@ -32,7 +33,6 @@
     </ListView>
 
 
-    
-   
-    
+
+
 </ContentPage>
