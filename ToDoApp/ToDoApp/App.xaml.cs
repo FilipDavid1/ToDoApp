@@ -8,6 +8,7 @@ namespace ToDoApp
 {
     public partial class App : Application
     {
+
         ToDosService toDosService;
 
         public App()
@@ -18,7 +19,6 @@ namespace ToDoApp
 
             MainPage = new NavigationPage(new ToDoListPage(toDosService));
         }
-
 
         protected override void OnStart()
         {
