@@ -23,7 +23,7 @@ namespace ToDoApp
         {
             await Navigation.PushAsync(new ToDoDetailPage(toDosService)
             {
-                
+                BindingContext = new ToDo { IsDone = false }
             });
         }
 
