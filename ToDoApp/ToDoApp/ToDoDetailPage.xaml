@@ -1,12 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ToDoApp.ToDoDetailPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+             x:Class="ToDoApp.ToDoDetailPage"
+             Title="Edit task">
+    
+        <StackLayout Margin="20">
+            <Editor Placeholder="Write task"
+                    Text="{Binding Text}"
+                    HeightRequest="100"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+                <Button Text="Save"
+                        Clicked="OnSaveButtonClicked"></Button>
+                <Button Grid.Column="1"
+                    Text="Delete"
+                    Clicked="OnDeketeButtonClicked"></Button>
+            </Grid>
         </StackLayout>
-    </ContentPage.Content>
+    
 </ContentPage>
