@@ -46,7 +46,8 @@ namespace ToDoApp
 
         }
 
-        
+        public void AddToDo(ToDo toDo) => ToDos.Add(toDo);
+        public void RemoveToDo(ToDo toDo) => ToDos.Remove(toDo);
 
     }
 }
