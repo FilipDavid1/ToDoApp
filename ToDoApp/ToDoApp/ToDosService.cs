@@ -32,6 +32,20 @@ namespace ToDoApp
             }
         }
 
+        public void LoadToDos()
+        {
+            XmlSerializer serializer = new XmlSerializer(ToDos.GetType());
+            if (File.Exists(filePath))
+            {
+                using (StreamReader sr = new StreamReader(filePath))
+                {
+                    ToDos = (ObservableCollection<ToDo>)serializer.Deserialize(sr);
+                }
+            }
+
+
+        }
+
         
 
     }
